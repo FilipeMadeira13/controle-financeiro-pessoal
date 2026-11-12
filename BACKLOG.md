@@ -58,7 +58,7 @@ Antes de instalações, gravações, mudanças no Git ou operações externas, e
 
 - [x] Verificar o estado do Git e preparar uma branch de trabalho mediante aprovação (**A01**, 1h; dependências: nenhuma). **Pronto:** contexto registrado e trabalho preparado fora de `main/master`.
 - [x] Preparar o ambiente Python e registrar dependências e arquivos ignorados pelo Git (**A02**, 1h; depende de A01). **Pronto:** ambiente reproduzível; segredos, bancos e backups excluídos do versionamento.
-- [ ] Criar o projeto Django com SQLite e configurações por ambiente (**A03**, 1h; depende de A02). **Pronto:** servidor local inicia e a verificação do Django executa sem erros.
+- [x] Criar o projeto Django com SQLite e configurações por ambiente (**A03**, 1h; depende de A02). **Pronto:** servidor local inicia e a verificação do Django executa sem erros.
 - [ ] Construir uma página base adaptada ao celular e computador (**A04**, 2h; depende de A03). **Pronto:** navegação e conteúdo permanecem utilizáveis nos dois tamanhos.
 - [ ] Escrever testes de login, credenciais inválidas e acesso anônimo (**A05**, 1h; depende de A03). **Pronto:** os testes demonstram a ausência do comportamento esperado.
 - [ ] Implementar login, logout e proteção das páginas privadas (**A06**, 2h; depende de A04 e A05). **Pronto:** sua conta acessa a página privada e os testes passam.
