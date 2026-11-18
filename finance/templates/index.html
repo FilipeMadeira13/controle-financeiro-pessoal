@@ -1,12 +1,83 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Conheça a proposta do seu espaço de controle financeiro pessoal.">
+    <title>Controle financeiro</title>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
 </head>
 <body>
-    <h1>Financial Control</h1>
-    <p>Sistema de controle financeiro pessoal.</p>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="#inicio" aria-label="Controle financeiro — início">
+                <span class="brand-mark" aria-hidden="true">cf.</span>
+                Controle financeiro
+            </a>
+            <nav aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#rodape">Rodapé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+        <section class="hero" id="inicio" aria-labelledby="hero-title">
+            <div class="container hero-content">
+                <p class="eyebrow">Um novo olhar para suas finanças</p>
+                <h1 id="hero-title">Seu dinheiro,<br><span>com mais clareza.</span></h1>
+                <p class="hero-description">
+                    Um espaço pensado para organizar suas contas, entender seus gastos
+                    e planejar os próximos passos com tranquilidade.
+                </p>
+                <a class="button" href="#recursos">Conhecer os recursos <span aria-hidden="true">→</span></a>
+                <p class="hero-note">Organização hoje. Mais possibilidades amanhã.</p>
+            </div>
+        </section>
+
+        <!-- Recursos: os textos abaixo são exemplos da proposta do projeto. -->
+        <section class="features" id="recursos" aria-labelledby="features-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">O essencial, em um só lugar</p>
+                    <h2 id="features-title">Mais organização para o seu dia a dia.</h2>
+                    <p>Conheça os pilares que vão guiar seu controle financeiro.</p>
+                </div>
+
+                <div class="cards">
+                    <article class="card">
+                        <span class="card-number" aria-hidden="true">01</span>
+                        <h3>Receitas e despesas</h3>
+                        <p>Uma base para reunir entradas e saídas e entender para onde seu dinheiro vai a cada mês.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-number" aria-hidden="true">02</span>
+                        <h3>Cartões e parcelas</h3>
+                        <p>Um espaço pensado para organizar faturas e visualizar os compromissos dos próximos meses.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-number" aria-hidden="true">03</span>
+                        <h3>Planejamento mensal</h3>
+                        <p>Um ponto de partida para acompanhar seu orçamento e planejar seus objetivos com mais clareza.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="rodape">
+        <div class="container footer-content">
+            <p class="footer-brand">Controle financeiro</p>
+            <p>Seu próximo passo começa com organização.</p>
+            <a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a>
+        </div>
+    </footer>
 </body>
 </html>
