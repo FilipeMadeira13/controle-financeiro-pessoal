@@ -300,6 +300,306 @@ h3 {
     }
 }
 
+/* Páginas financeiras: estilos limitados às novas telas estáticas. */
+.finance-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.finance-page .site-header nav {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.finance-page .nav-list {
+    gap: var(--space-1) var(--space-3);
+}
+
+.finance-page .nav-list a[aria-current="page"] {
+    color: var(--color-primary-hover);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.workspace {
+    flex: 1;
+    padding-block: var(--space-5) var(--space-6);
+}
+
+.workspace-heading {
+    max-width: 46rem;
+    margin-bottom: var(--space-4);
+}
+
+.workspace-heading .eyebrow {
+    margin-bottom: var(--space-2);
+    font-size: 0.875rem;
+}
+
+.workspace-heading h1 {
+    margin-bottom: var(--space-2);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.workspace-heading > p:last-child {
+    color: var(--color-muted);
+    font-size: 1.0625rem;
+}
+
+.summary-grid, .workspace-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.summary-card, .workspace-panel {
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+}
+
+.summary-card {
+    padding: var(--space-3);
+}
+
+.summary-card-highlight {
+    background: var(--color-tint);
+    border-color: #bfdbfe;
+}
+
+.summary-icon, .empty-icon {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: var(--color-tint);
+    color: var(--color-primary-hover);
+}
+
+.summary-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: var(--space-2);
+    border-radius: var(--radius-small);
+}
+
+.summary-card-highlight .summary-icon {
+    background: var(--color-surface);
+}
+
+.summary-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.summary-card h2 {
+    margin-bottom: var(--space-1);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: var(--color-muted);
+}
+
+.summary-value {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+    font-variant-numeric: tabular-nums;
+}
+
+.summary-caption {
+    margin-top: var(--space-1);
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+.panel-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.workspace-panel h2 {
+    margin-bottom: var(--space-1);
+    font-size: 1.25rem;
+}
+
+.panel-heading p {
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+}
+
+.context-label {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-small);
+    background: var(--color-tint);
+    color: var(--color-primary-hover);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-5) var(--space-3);
+    text-align: center;
+}
+
+.empty-state-compact {
+    padding-block: var(--space-4);
+}
+
+.empty-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: var(--space-3);
+    border-radius: var(--radius-large);
+}
+
+.empty-icon svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.empty-state h3 {
+    font-size: 1.125rem;
+}
+
+.empty-state > p {
+    max-width: 34rem;
+    color: var(--color-muted);
+}
+
+.workspace-note {
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    border-left: 3px solid var(--color-primary);
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+}
+
+.workspace-note strong {
+    color: var(--color-text);
+}
+
+.budget-list {
+    margin: 0;
+    padding: var(--space-1) var(--space-3);
+}
+
+.budget-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-3);
+    padding-block: var(--space-3);
+}
+
+.budget-row + .budget-row {
+    border-top: 1px solid var(--color-border);
+}
+
+.budget-row dt {
+    font-weight: 600;
+}
+
+.budget-row dt span {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.budget-row dd {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+}
+
+.budget-total dd {
+    color: var(--color-primary-hover);
+    font-weight: 600;
+}
+
+.safety-panel {
+    padding: var(--space-3);
+    background: var(--color-tint);
+    border-color: #bfdbfe;
+}
+
+.safety-panel .summary-icon {
+    background: var(--color-surface);
+}
+
+.safety-description, .availability > p:last-child {
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+}
+
+.setup-value {
+    margin-top: var(--space-3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+}
+
+.availability {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid #bfdbfe;
+}
+
+.availability h3 {
+    font-size: 1rem;
+}
+
+.availability-value {
+    margin-bottom: var(--space-1);
+    color: var(--color-primary-hover);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.empty-state-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-1) var(--space-3);
+    margin-top: var(--space-3);
+}
+
+.empty-state-links a {
+    padding-block: var(--space-1);
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .workspace-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .planning-columns {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    }
+}
+
 /* Acessibilidade: respeitar quem prefere evitar animações. */
 @media (prefers-reduced-motion: reduce) {
     .button, .card, .nav-list a {

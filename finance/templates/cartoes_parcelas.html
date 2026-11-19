@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompanhe seus cartões, faturas e compromissos das próximas parcelas.">
+    <title>Cartões e parcelas | Controle financeiro</title>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+</head>
+<body class="finance-page" id="topo">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="{% url 'receitas_despesas' %}" aria-label="Controle financeiro — receitas e despesas">
+                <span class="brand-mark" aria-hidden="true">cf.</span>
+                Controle financeiro
+            </a>
+            <nav aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="{% url 'receitas_despesas' %}">Receitas e despesas</a></li>
+                    <li><a href="{% url 'cartoes_parcelas' %}" aria-current="page">Cartões e parcelas</a></li>
+                    <li><a href="{% url 'planejamento_mensal' %}">Planejamento mensal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container workspace" id="conteudo" tabindex="-1">
+        <div class="workspace-heading">
+            <p class="eyebrow">Compromissos sob controle</p>
+            <h1>Cartões e parcelas</h1>
+            <p>Suas faturas de hoje e os compromissos dos próximos meses, com espaço para se organizar.</p>
+        </div>
+
+        <section class="summary-grid" aria-label="Resumo dos cartões">
+            <article class="summary-card">
+                <span class="summary-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h3"/></svg>
+                </span>
+                <h2>Cartões cadastrados</h2>
+                <p class="summary-value">0</p>
+                <p class="summary-caption">Nenhum cartão por enquanto</p>
+            </article>
+            <article class="summary-card">
+                <span class="summary-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                </span>
+                <h2>Faturas em aberto</h2>
+                <p class="summary-value">R$ 0,00</p>
+                <p class="summary-caption">Nenhuma fatura registrada</p>
+            </article>
+            <article class="summary-card summary-card-highlight">
+                <span class="summary-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 11h18M8 15h2M14 15h2"/></svg>
+                </span>
+                <h2>Parcelas futuras</h2>
+                <p class="summary-value">R$ 0,00</p>
+                <p class="summary-caption">Nenhum compromisso registrado</p>
+            </article>
+        </section>
+
+        <div class="workspace-columns">
+            <section class="workspace-panel" aria-labelledby="cartoes-title">
+                <div class="panel-heading">
+                    <div>
+                        <h2 id="cartoes-title">Seus cartões</h2>
+                        <p>Cada cartão com seu próprio acompanhamento.</p>
+                    </div>
+                </div>
+                <div class="empty-state empty-state-compact">
+                    <span class="empty-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="26" height="18" rx="4"/><path d="M3 13h26M8 20h5"/></svg>
+                    </span>
+                    <h3>Nenhum cartão cadastrado</h3>
+                    <p>Seus cartões aparecerão aqui com nome e dia de vencimento.</p>
+                </div>
+            </section>
+
+            <section class="workspace-panel" aria-labelledby="faturas-title">
+                <div class="panel-heading">
+                    <div>
+                        <h2 id="faturas-title">Faturas</h2>
+                        <p>Uma visão dos valores e vencimentos.</p>
+                    </div>
+                </div>
+                <div class="empty-state empty-state-compact">
+                    <span class="empty-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v23l-4-3-4 3-4-3-4 3Z"/><path d="M12 11h8M12 16h8M12 21h4"/></svg>
+                    </span>
+                    <h3>Nenhuma fatura por aqui</h3>
+                    <p>As faturas serão reunidas por cartão e mês, com total e situação de pagamento.</p>
+                </div>
+            </section>
+        </div>
+
+        <section class="workspace-panel" aria-labelledby="parcelas-title">
+            <div class="panel-heading">
+                <div>
+                    <h2 id="parcelas-title">Próximas parcelas</h2>
+                    <p>Um olhar para os compromissos dos próximos meses.</p>
+                </div>
+                <span class="context-label">Visão futura</span>
+            </div>
+            <div class="empty-state empty-state-compact">
+                <span class="empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="22" height="21" rx="3"/><path d="M10 4v6M22 4v6M5 14h22M11 20h3M19 20h2M11 24h3"/></svg>
+                </span>
+                <h3>Nenhuma parcela prevista</h3>
+                <p>As compras parceladas aparecerão aqui com o valor de cada parcela e o mês da respectiva fatura.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p class="footer-brand">Controle financeiro</p>
+            <p>Seu próximo passo começa com organização.</p>
+            <a href="#topo">Voltar ao topo</a>
+        </div>
+    </footer>
+</body>
+</html>

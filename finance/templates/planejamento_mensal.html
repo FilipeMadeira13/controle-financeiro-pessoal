@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualize seu orçamento mensal, sua margem de segurança e o disponível estimado.">
+    <title>Planejamento mensal | Controle financeiro</title>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+</head>
+<body class="finance-page" id="topo">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="{% url 'receitas_despesas' %}" aria-label="Controle financeiro — receitas e despesas">
+                <span class="brand-mark" aria-hidden="true">cf.</span>
+                Controle financeiro
+            </a>
+            <nav aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="{% url 'receitas_despesas' %}">Receitas e despesas</a></li>
+                    <li><a href="{% url 'cartoes_parcelas' %}">Cartões e parcelas</a></li>
+                    <li><a href="{% url 'planejamento_mensal' %}" aria-current="page">Planejamento mensal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container workspace" id="conteudo" tabindex="-1">
+        <div class="workspace-heading">
+            <p class="eyebrow">Mais espaço para seus próximos passos</p>
+            <h1>Planejamento mensal</h1>
+            <p>Enxergue seu orçamento como um todo e se prepare para o mês com mais tranquilidade.</p>
+        </div>
+
+        <div class="workspace-columns planning-columns">
+            <section class="workspace-panel" aria-labelledby="orcamento-title">
+                <div class="panel-heading">
+                    <div>
+                        <h2 id="orcamento-title">Seu orçamento</h2>
+                        <p>Entradas e compromissos que compõem o mês.</p>
+                    </div>
+                    <span class="context-label">Visão mensal</span>
+                </div>
+
+                <dl class="budget-list">
+                    <div class="budget-row">
+                        <dt>Receitas previstas <span>Entradas do mês</span></dt>
+                        <dd>Sem registros</dd>
+                    </div>
+                    <div class="budget-row">
+                        <dt>Despesas previstas <span>Saídas fora do cartão</span></dt>
+                        <dd>Sem registros</dd>
+                    </div>
+                    <div class="budget-row">
+                        <dt>Compromissos do cartão <span>Parcelas das faturas do mês</span></dt>
+                        <dd>Sem registros</dd>
+                    </div>
+                    <div class="budget-row budget-total">
+                        <dt>Resultado mensal</dt>
+                        <dd>Aguardando dados</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="workspace-panel safety-panel" aria-labelledby="margem-title">
+                <span class="summary-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v5c0 5-5 9-8 10-3-1-8-5-8-10V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg>
+                </span>
+                <h2 id="margem-title">Margem de segurança</h2>
+                <p class="safety-description">Um respiro no orçamento para lidar com imprevistos antes de planejar novos passos.</p>
+                <p class="setup-value">Não definida</p>
+                <p class="summary-caption">Sua margem mensal aparecerá aqui.</p>
+                <div class="availability">
+                    <h3>Disponível estimado</h3>
+                    <p class="availability-value">Aguardando planejamento</p>
+                    <p>O resultado do mês e a margem de segurança ajudarão a compor essa visão.</p>
+                </div>
+            </section>
+        </div>
+
+        <section class="workspace-panel" aria-labelledby="planejamento-title">
+            <div class="empty-state">
+                <span class="empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="7"/><circle cx="16" cy="16" r="2"/></svg>
+                </span>
+                <h2 id="planejamento-title">Seu planejamento começa com uma visão clara</h2>
+                <p>Quando suas movimentações e compromissos estiverem organizados, este espaço reunirá o panorama do seu mês.</p>
+                <div class="empty-state-links">
+                    <a href="{% url 'receitas_despesas' %}">Ver receitas e despesas</a>
+                    <a href="{% url 'cartoes_parcelas' %}">Ver cartões e parcelas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p class="footer-brand">Controle financeiro</p>
+            <p>Seu próximo passo começa com organização.</p>
+            <a href="#topo">Voltar ao topo</a>
+        </div>
+    </footer>
+</body>
+</html>
